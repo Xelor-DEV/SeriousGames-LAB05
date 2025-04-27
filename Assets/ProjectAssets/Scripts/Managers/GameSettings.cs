@@ -11,13 +11,16 @@ public class GameSettings : ScriptableObject
             return _gameVersion;
         }
     }
-    [SerializeField] private string _nickName = "Ultraman";
+    [SerializeField] private string _nickName;
     public string NickName
     {
         get
         {
-            int value = Random.Range(0, 9999);
-            return _nickName + value.ToString();
+            return _nickName;
+        }
+        set
+        {
+            _nickName = value;
         }
     }
 }
