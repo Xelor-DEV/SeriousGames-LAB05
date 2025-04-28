@@ -3,11 +3,11 @@ using UnityEngine.UI;
 
 public class SelectedCharacter : MonoBehaviour
 {
-    [SerializeField] private CharacterSelector characterSelector;
+    [SerializeField] private CharacterDatabase characterDatabase;
     [SerializeField] private Image currentCharacter;
 
     public void UpdateCharacter()
     {
-        currentCharacter.sprite = characterSelector.CurrentCharacter;
+        currentCharacter.sprite = characterDatabase.CurrentCharacter.characterIcon;
     }
 }

@@ -4535,7 +4535,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 3991856e840e144489be4c9cdbe93fa5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characterSelector: {fileID: 1520537803}
+  characterDatabase: {fileID: 11400000, guid: a810cd402392f914c8ec28627ca67b95, type: 2}
   currentCharacter: {fileID: 662054625}
 --- !u!114 &1212416873
 MonoBehaviour:
@@ -5164,13 +5164,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 61179d5af2abc0a4cbadced18a4924ec, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  characterSprites:
-  - {fileID: 1308295586, guid: 403977bb6dc63a44fb0b58eadef7fbb0, type: 3}
-  - {fileID: -794219427, guid: 17c7db71cc6f5bb4e823ff23c0f39893, type: 3}
-  - {fileID: 1154183382, guid: ba1397a60d1408048996034846b887fa, type: 3}
+  characterDatabase: {fileID: 11400000, guid: a810cd402392f914c8ec28627ca67b95, type: 2}
   characterImage: {fileID: 803504068}
-  currentIndex: 0
-  currentCharacter: {fileID: 0}
   OnCharacterSelected:
     m_PersistentCalls:
       m_Calls:

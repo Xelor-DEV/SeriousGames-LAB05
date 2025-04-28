@@ -4,50 +4,44 @@ using UnityEngine.Events;
 
 public class CharacterSelector : MonoBehaviour
 {
-    [Header("Configuración")]
-    [SerializeField] private Sprite[] characterSprites;
+    [Header("References")]
+    [SerializeField] private CharacterDatabase characterDatabase;
     [SerializeField] private Image characterImage;
-
-    [SerializeField] private int currentIndex = 0;
-    [SerializeField] private Sprite currentCharacter;
-
-    public Sprite CurrentCharacter
-    {
-        get
-        {
-            return currentCharacter;
-        }
-    }
 
     public UnityEvent OnCharacterSelected;
 
     private void Start()
     {
-        if (characterSprites.Length > 0 && characterImage != null)
+        if (characterDatabase.characters.Length > 0 && characterImage != null)
         {
-            characterImage.sprite = characterSprites[currentIndex];
-            currentCharacter = characterSprites[currentIndex];
+            characterDatabase.SetDefaultCharacter();
+            UpdateCharacterUI();
             OnCharacterSelected?.Invoke();
         }
     }
 
     public void ChangeCharacter(int direction)
     {
-        if (characterSprites.Length == 0 || characterImage == null) return;
+        if (characterDatabase.characters.Length == 0 || characterImage == null) return;
 
-        currentIndex += direction;
+        int newIndex = characterDatabase.currentCharacterIndex + direction;
 
-        if (currentIndex < 0)
+        if (newIndex < 0)
         {
-            currentIndex = characterSprites.Length - 1;
+            newIndex = characterDatabase.characters.Length - 1;
         }
-        else if (currentIndex >= characterSprites.Length)
+        else if (newIndex >= characterDatabase.characters.Length)
         {
-            currentIndex = 0;
+            newIndex = 0;
         }
 
-        characterImage.sprite = characterSprites[currentIndex];
-        currentCharacter = characterSprites[currentIndex];
+        characterDatabase.currentCharacterIndex = newIndex;
+        UpdateCharacterUI();
         OnCharacterSelected?.Invoke();
+    }
+
+    private void UpdateCharacterUI()
+    {
+        characterImage.sprite = characterDatabase.CurrentCharacter.characterIcon;
     }
 }
