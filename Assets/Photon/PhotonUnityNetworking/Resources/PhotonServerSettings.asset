@@ -36,6 +36,11 @@ MonoBehaviour:
   RpcList:
   - ClickRpc
   - DestroyRpc
+  - RPC_ShootVisual
+  - RPC_UpdateHealth
+  - RPC_VisualShot
+  - TakeDamage
+  - RPC_RespawnPlayer
   DisableAutoOpenWizard: 1
   ShowSettings: 1
   DevRegionSetOnce: 1

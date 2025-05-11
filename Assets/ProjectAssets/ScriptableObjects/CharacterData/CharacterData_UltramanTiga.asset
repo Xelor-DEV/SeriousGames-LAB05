@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7229db69cf7561c48aba60455c8737f5, type: 3}
   m_Name: CharacterData_UltramanTiga
   m_EditorClassIdentifier: 
-  characterPrefab: {fileID: 0}
+  characterPrefab: {fileID: 55475323328027602, guid: ee7225ba7a878a845aedb65ee45c8c61, type: 3}
   characterIcon: {fileID: 1154183382, guid: ba1397a60d1408048996034846b887fa, type: 3}

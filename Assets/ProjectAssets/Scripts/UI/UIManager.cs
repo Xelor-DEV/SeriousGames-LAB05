@@ -1,7 +1,8 @@
 ﻿using UnityEngine;
 using TMPro;
+using Photon.Pun;
 
-public class UIManager : MonoBehaviour
+public class UIManager : MonoBehaviourPunCallbacks
 {
     public static UIManager Instance { get; private set; }
 
@@ -13,6 +14,7 @@ public class UIManager : MonoBehaviour
 
     [Header("CurrentRoomMenu")]
     [SerializeField] private TMP_Text roomName;
+    [SerializeField] private GameObject startArena;
 
     public TMP_Text NickName
     {
@@ -53,6 +55,19 @@ public class UIManager : MonoBehaviour
     private void Start()
     {
         ActivateMenu(initIndex);
+    }
+
+    public override void OnJoinedRoom()
+    {
+        base.OnJoinedRoom();
+        if (PhotonNetwork.IsMasterClient == true)
+        {
+            startArena.SetActive(true);
+        }
+        else
+        {
+            startArena.SetActive(false);
+        }
     }
 
     public void ActivateMenu(int menuIndex)

@@ -12,5 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7229db69cf7561c48aba60455c8737f5, type: 3}
   m_Name: CharacterData_UltramanZero
   m_EditorClassIdentifier: 
-  characterPrefab: {fileID: 0}
+  characterPrefab: {fileID: 8269678585204645551, guid: ea0bf515c1102a243b14852112b378cc, type: 3}
   characterIcon: {fileID: 1308295586, guid: 403977bb6dc63a44fb0b58eadef7fbb0, type: 3}
